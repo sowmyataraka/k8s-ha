@@ -25,11 +25,11 @@ spec:
       topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: topology.kubernetes.io/zone
-        whenUnsatisfiable: 4
+        whenUnsatisfiable: donotSchedule
         labelSelector:
           matchLabels:
             project: roboshop
-      - maxSkew: 1
+      - maxSkew: 2
         topologyKey: topology.kubernetes.io/node
         whenUnsatisfiable: ScheduleAnyway
         labelSelector:
